@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../UI/Button';
 
 import style from './Hero.module.scss';
 
@@ -15,7 +16,7 @@ const Hero: React.FC = () => {
             that can meet your needs!
           </p>
           <div className={`${style.row}`}>
-            <button className={`${style.heroButton} button button_o`}>
+            <Button className={`${style.heroButton}`} border>
               View Intro{' '}
               <svg
                 width="24"
@@ -30,10 +31,8 @@ const Hero: React.FC = () => {
                   fill="#003459"
                 />
               </svg>
-            </button>
-            <button className={`${style.heroButton} button`}>
-              Explore Now
-            </button>
+            </Button>
+            <Button className={`${style.heroButton}`}>Explore Now</Button>
           </div>
         </div>
         <img

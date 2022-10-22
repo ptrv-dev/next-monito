@@ -1,0 +1,23 @@
+.section {
+  padding: 60px 0;
+}
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.sectionHeaderColumn {
+  flex: 1;
+}
+.sectionSuptitle {
+  font-weight: 500;
+  font-size: 16px;
+  color: #000;
+}
+.sectionTitle {
+  font-size: 24px;
+  line-height: 36px;
+  color: #003459;
+  text-transform: capitalize;
+}

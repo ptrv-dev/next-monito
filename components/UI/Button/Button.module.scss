@@ -1,0 +1,18 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border: none;
+  padding: 10px 30px;
+  background: #003459;
+  border-radius: 50px;
+  font-weight: 500;
+  color: #fdfdfd;
+  font-size: 16px;
+  gap: 10px;
+  &_o {
+    background: none;
+    color: #003459;
+    border: 1.5px solid #003459;
+  }
+}

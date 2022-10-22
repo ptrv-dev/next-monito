@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import Search from '../Search';
+import Button from '../UI/Button';
 
 import style from './Header.module.scss';
 
@@ -41,9 +42,9 @@ const Header: React.FC = () => {
         </div>
         <div className={style.headerColumn}>
           <Search />
-          <button className={`${style.headerButton} button`}>
+          <Button className={`${style.headerButton}`}>
             Join the community
-          </button>
+          </Button>
         </div>
       </div>
     </header>
