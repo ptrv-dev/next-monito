@@ -28,8 +28,8 @@ const CatalogItem: React.FC<CatalogItemProps> = ({
           <h4>{title}</h4>
           {description && (
             <ul className={`${style.description}`}>
-              {description.map((item) => (
-                <li>
+              {description.map((item, index) => (
+                <li key={index}>
                   {item[0]}: <b>{item[1]}</b>
                 </li>
               ))}
