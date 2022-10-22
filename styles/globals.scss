@@ -6,14 +6,29 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Gilroy';
 }
 
 body {
   font-size: 16px;
-  font-family: 'Gilroy';
 }
 
-div[class$='__container'] {
+button {
+  cursor: pointer;
+}
+
+.container {
   max-width: 1180px;
   margin: 0 auto;
+}
+
+.button {
+  text-decoration: none;
+  border: none;
+  padding: 10px 30px;
+  background: #003459;
+  border-radius: 50px;
+  font-weight: 700;
+  color: #fdfdfd;
+  font-size: 16px;
 }
