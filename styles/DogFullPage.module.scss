@@ -1,0 +1,13 @@
+.root {
+  padding-top: calc(104px + 22px);
+}
+.body {
+  display: flex;
+  gap: 30px;
+}
+.bodyColumn {
+  max-width: 50%;
+  flex-basis: 50%;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
