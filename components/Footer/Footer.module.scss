@@ -28,6 +28,26 @@
       font-size: 16px;
       color: #00171f;
       text-decoration: none;
+      position: relative;
+      z-index: 5;
+    }
+    position: relative;
+    svg {
+      position: absolute;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.3s;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(30deg) scale(80%);
+      path {
+        fill: #fff;
+      }
+    }
+    &:hover {
+      svg {
+        opacity: 1;
+      }
     }
   }
 }
@@ -55,6 +75,9 @@
       text-decoration: none;
       font-weight: 500;
       color: #667479;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

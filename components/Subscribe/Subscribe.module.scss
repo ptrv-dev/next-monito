@@ -41,6 +41,10 @@
       border: none;
       text-transform: capitalize;
       align-items: center;
+      transition: background 0.3s;
+      &:hover {
+        background: #0078cd;
+      }
     }
   }
 }
