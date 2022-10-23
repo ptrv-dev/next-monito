@@ -15,6 +15,8 @@ const Banner: React.FC<BannerProps> = ({ children, background, right }) => {
         className={`${style.banner} ${right ? style.bannerRight : ''}`}
         style={{
           background: background,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center',
         }}
       >
         {children}

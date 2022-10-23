@@ -1,0 +1,17 @@
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  input {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccd1d2;
+    border-radius: 4px;
+    background: none;
+  }
+  label {
+    color: #00171f;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}

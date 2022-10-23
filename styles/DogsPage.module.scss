@@ -1,3 +1,36 @@
 .root {
   padding-top: 104px;
+  padding-bottom: 60px;
+}
+
+.container {
+  padding-top: 8px;
+}
+
+.path {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  a {
+    text-transform: capitalize;
+    color: #667479;
+    text-decoration: none;
+  }
+  margin-bottom: 18px;
+}
+.body {
+  display: flex;
+  gap: 20px;
+  margin-top: 35px;
+}
+.catalog {
+  flex: 1;
+  h3 {
+    font-size: 24px;
+    color: #003459;
+    margin-bottom: 15px;
+  }
+}
+.filter {
+  flex: 1;
 }

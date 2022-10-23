@@ -1,0 +1,19 @@
+.filterCategory {
+  display: inline-flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 8px;
+  h4 {
+    color: #00171f;
+    font-size: 16px;
+  }
+  padding: 16px 0;
+  border-bottom: 1px solid #ebeeef;
+  &:first-of-type {
+    padding-top: 0;
+  }
+}
+.row {
+  display: flex;
+  gap: 10px;
+}

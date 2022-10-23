@@ -214,7 +214,7 @@ const Home: NextPage<HomeProps> = ({ dogs, products, news }) => {
       >
         <News>
           {news.map((item) => (
-            <NewsItem {...item} />
+            <NewsItem key={item._id} {...item} />
           ))}
         </News>
       </Section>

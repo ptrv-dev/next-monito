@@ -34,4 +34,18 @@
   &:hover {
     background: #0078cd;
   }
+  &White {
+    background: #fdfdfd;
+    color: #003459;
+    &.button_o {
+      background: none;
+      border-color: #fdfdfd;
+      color: #fdfdfd;
+      svg {
+        path {
+          fill: #fdfdfd;
+        }
+      }
+    }
+  }
 }
