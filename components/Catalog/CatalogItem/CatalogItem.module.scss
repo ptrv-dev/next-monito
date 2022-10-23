@@ -26,6 +26,9 @@
   margin-top: 8px;
   padding: 8px;
   margin-bottom: 12px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 .price {
   font-size: 14px;
@@ -43,5 +46,19 @@
     &:first-child {
       list-style: none;
     }
+  }
+}
+.present {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  background: #fceed5;
+  border-radius: 8px;
+  padding: 10px;
+  span {
+    font-weight: 700;
+    color: #002a48;
   }
 }

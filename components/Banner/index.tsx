@@ -9,8 +9,6 @@ interface BannerProps {
 import style from './Banner.module.scss';
 
 const Banner: React.FC<BannerProps> = ({ children, background, right }) => {
-  console.log(background);
-
   return (
     <div className="container">
       <div

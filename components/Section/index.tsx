@@ -6,7 +6,7 @@ interface SectionProps {
   suptitle?: string;
   title: string;
   button?: JSX.Element;
-  children: JSX.Element;
+  children: any;
 }
 
 const Section: React.FC<SectionProps> = ({

@@ -11,6 +11,8 @@ interface CatalogItemProps {
   description?: DescriptionItem[];
   price: number;
   SKU: number;
+  category: 'dogs' | 'products';
+  present?: string;
 }
 
 const CatalogItem: React.FC<CatalogItemProps> = ({
@@ -19,23 +21,34 @@ const CatalogItem: React.FC<CatalogItemProps> = ({
   description,
   price,
   SKU,
+  category,
+  present,
 }) => {
   return (
-    <Link href={'/dogs/' + SKU}>
+    <Link href={`/${category}/` + SKU}>
       <div className={`${style.catalogItem}`}>
-        <img src={'/static/img/catalog/dogs/' + image} alt={title} />
+        <img src={`/static/img/catalog/${category}/${image}`} alt={title} />
         <div className={`${style.body}`}>
           <h4>{title}</h4>
           {description && (
             <ul className={`${style.description}`}>
-              {description.map((item, index) => (
-                <li key={index}>
-                  {item[0]}: <b>{item[1]}</b>
-                </li>
-              ))}
+              {description.map(
+                (item, index) =>
+                  item[1] && (
+                    <li key={index}>
+                      {item[0]}: <b>{item[1]}</b>
+                    </li>
+                  )
+              )}
             </ul>
           )}
           <p className={`${style.price}`}>{price} VND</p>
+          {present && (
+            <div className={`${style.present}`}>
+              <img src="/static/img/icons/present.svg" alt="" />
+              <span>{present}</span>
+            </div>
+          )}
         </div>
       </div>
     </Link>
