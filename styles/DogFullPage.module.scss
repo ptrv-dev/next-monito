@@ -1,13 +1,73 @@
 .root {
-  padding-top: calc(104px + 22px);
+  padding-top: calc(104px);
+  padding-bottom: 80px;
 }
 .body {
   display: flex;
   gap: 30px;
+  padding: 22px;
+  border: 1px solid #ebeeef;
+  border-radius: 20px;
 }
 .bodyColumn {
   max-width: 50%;
-  flex-basis: 50%;
-  flex-grow: 0;
+  flex: 1;
   flex-shrink: 0;
+}
+.guarantee {
+  margin-top: 20px;
+}
+.path {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  a {
+    text-transform: capitalize;
+    color: #667479;
+    text-decoration: none;
+  }
+  margin-bottom: 18px;
+}
+.suptitle {
+  font-weight: 500;
+  color: #99a2a5;
+}
+.title {
+  font-size: 24px;
+  color: #00171f;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 20px;
+  color: #002a48;
+  margin: 6px 0;
+}
+
+.buttonsRow {
+  display: flex;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+}
+.infoRow {
+  display: inline-flex;
+  align-items: center;
+  border-bottom: 1px solid #ebeeef;
+}
+.infoItem {
+  padding: 12px;
+  font-weight: 500;
+  color: #667479;
+  &:first-child {
+    flex-basis: 35%;
+  }
+  &:last-child {
+    flex-basis: fill;
+  }
 }
