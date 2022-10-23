@@ -1,0 +1,10 @@
+.sellers {
+  display: flex;
+  align-items: center;
+}
+.sellersItem {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
