@@ -10,9 +10,28 @@
   color: #fdfdfd;
   font-size: 16px;
   gap: 10px;
+  transition: background 0.3s, color 0.3s;
   &_o {
     background: none;
     color: #003459;
     border: 1.5px solid #003459;
+    svg {
+      path {
+        transition: fill 0.3s;
+      }
+    }
+    &:hover {
+      background: #00528c;
+      border-color: #00528c;
+      color: #fff;
+      svg {
+        path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+  &:hover {
+    background: #0078cd;
   }
 }
