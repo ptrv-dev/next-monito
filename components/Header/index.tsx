@@ -69,7 +69,7 @@ const Header: React.FC = () => {
                 </svg>
               </li>
               <li>
-                <Link href={'/'}>
+                <Link href={'/contact'}>
                   <a>Contact</a>
                 </Link>
                 <svg

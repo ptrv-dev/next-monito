@@ -14,10 +14,11 @@ import Link from 'next/link';
 import Button from '../../components/UI/Button';
 
 const DogFullPage: NextPage<DogFullPageProps> = ({ dog }) => {
+  const title = `${dog.title} | Monito`;
   return (
     <>
       <Head>
-        <title>{dog.title} | Monito</title>
+        <title>{title}</title>
       </Head>
       <main>
         <div className="container">
