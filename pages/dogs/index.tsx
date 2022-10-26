@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import Link from 'next/link';
 import React from 'react';
 import Banner from '../../components/Banner';
@@ -132,6 +132,14 @@ const DogsPage: NextPage<DogsPageProps> = ({ dogs }) => {
 };
 
 export default DogsPage;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const dogs = await fetch(
+    'https://6358307cc26aac906f3dda7a.mockapi.io/dogs'
+  ).then((res) => res.json());
+  return { props: { dogs: dogs } };
+};
+
 DogsPage.getInitialProps = async () => {
   const dogs = await fetch(
     'https://6358307cc26aac906f3dda7a.mockapi.io/dogs'

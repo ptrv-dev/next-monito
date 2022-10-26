@@ -233,7 +233,7 @@ const Home: NextPage<HomeProps> = ({ dogs, products, news }) => {
 
 export default Home;
 
-Home.getInitialProps = async () => {
+export async function getStaticProps() {
   const dogs = await fetch(
     'https://6358307cc26aac906f3dda7a.mockapi.io/dogs'
   ).then((res) => res.json());
@@ -246,5 +246,5 @@ Home.getInitialProps = async () => {
     'https://6358307cc26aac906f3dda7a.mockapi.io/news'
   ).then((res) => res.json());
 
-  return { dogs: dogs, products: products, news: news };
-};
+  return { props: { dogs: dogs, products: products, news: news } };
+}
