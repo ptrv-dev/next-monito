@@ -52,7 +52,7 @@ const Header: React.FC = () => {
                 </svg>
               </li>
               <li>
-                <Link href={'/'}>
+                <Link href={'/about'}>
                   <a>About</a>
                 </Link>
                 <svg

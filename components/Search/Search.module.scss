@@ -32,6 +32,7 @@
   border-radius: 20px;
   overflow: hidden;
   padding: 15px;
+  box-shadow: 0 5px 10px rgba(#000, 0.1);
   hr {
     width: 100%;
     margin: 0 auto;
@@ -52,7 +53,7 @@
   right: 16px;
   display: inline-flex;
 }
-.notfound {
+.notFound {
   color: #002a48;
   font-size: 14px;
 }

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { IDogItem } from '../../pages/api/dogs';
 import debounce from '../../utils/debounce';
@@ -12,6 +13,8 @@ interface SearchProps {
 }
 
 const Search: React.FC<SearchProps> = ({ className, placeHolder }) => {
+  const router = useRouter();
+
   const [query, setQuery] = React.useState<string>('');
   const [loading, setLoading] = React.useState<boolean>(true);
   const [isVisible, setIsVisible] = React.useState(false);
@@ -40,7 +43,7 @@ const Search: React.FC<SearchProps> = ({ className, placeHolder }) => {
   };
 
   React.useEffect(() => {
-    const foo = (event: MouseEvent) => {
+    const windowClick = (event: MouseEvent) => {
       if (
         searchRef.current &&
         !event.composedPath().includes(searchRef.current)
@@ -49,13 +52,16 @@ const Search: React.FC<SearchProps> = ({ className, placeHolder }) => {
       } else {
         setIsVisible(true);
       }
-      console.log(event.composedPath());
     };
-    window.addEventListener('click', foo);
+    window.addEventListener('click', windowClick);
     return () => {
-      window.removeEventListener('click', foo);
+      window.removeEventListener('click', windowClick);
     };
   }, []);
+
+  React.useEffect(() => {
+    setIsVisible(false);
+  }, [router]);
 
   const onClickSearch = () => {
     inputRef.current?.focus();
@@ -70,7 +76,7 @@ const Search: React.FC<SearchProps> = ({ className, placeHolder }) => {
       <div
         onClick={onClickSearch}
         ref={searchRef}
-        className={`${style.search}${className ? className : ''}`}
+        className={`${style.search} ${className ? className : ''}`}
       >
         <svg
           width="20"
@@ -141,7 +147,7 @@ const Search: React.FC<SearchProps> = ({ className, placeHolder }) => {
                     />
                   ))
                 ) : (
-                  <p className={`${style.notfound}`}>
+                  <p className={`${style.notFound}`}>
                     There is nothing found for your query...
                   </p>
                 )}

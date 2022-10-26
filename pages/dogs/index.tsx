@@ -23,7 +23,7 @@ import Head from 'next/head';
 
 const DogsPage: NextPage<DogsPageProps> = ({ dogs }) => {
   return (
-    <main className={`${style.root}`}>
+    <main>
       <Head>
         <title>All our dogs 😊 | Monito</title>
       </Head>

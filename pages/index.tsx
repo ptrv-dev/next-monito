@@ -20,7 +20,6 @@ import Sellers from '../components/Sellers';
 import News from '../components/News';
 import { INewsItem } from './api/news';
 import NewsItem from '../components/News/NewsItem';
-import Link from 'next/link';
 
 const Home: NextPage<HomeProps> = ({ dogs, products, news }) => {
   return (

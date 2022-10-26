@@ -19,7 +19,7 @@ const DogFullPage: NextPage<DogFullPageProps> = ({ dog }) => {
       <Head>
         <title>{dog.title} | Monito</title>
       </Head>
-      <main className={`${style.root}`}>
+      <main>
         <div className="container">
           <div className={`${style.body}`}>
             <div className={`${style.bodyColumn}`}>
