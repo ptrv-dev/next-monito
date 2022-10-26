@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
                 />
               </svg>
             </Button>
-            <Button className={`${style.heroButton}`}>Explore Now</Button>
+            <Button href="/dogs">Explore Now</Button>
           </div>
         </div>
         <img

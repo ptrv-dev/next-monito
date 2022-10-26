@@ -20,6 +20,7 @@ import Sellers from '../components/Sellers';
 import News from '../components/News';
 import { INewsItem } from './api/news';
 import NewsItem from '../components/News/NewsItem';
+import Link from 'next/link';
 
 const Home: NextPage<HomeProps> = ({ dogs, products, news }) => {
   return (
@@ -37,7 +38,7 @@ const Home: NextPage<HomeProps> = ({ dogs, products, news }) => {
         suptitle="Whats new?"
         title="Take a look at some of our pets"
         button={
-          <Button border>
+          <Button href="/dogs" border>
             View more{' '}
             <svg
               width="20"
@@ -96,7 +97,7 @@ const Home: NextPage<HomeProps> = ({ dogs, products, news }) => {
               />
             </svg>
           </Button>
-          <Button>Explore Now</Button>
+          <Button href="/dogs">Explore Now</Button>
         </div>
       </Banner>
       <Section
@@ -188,7 +189,7 @@ const Home: NextPage<HomeProps> = ({ dogs, products, news }) => {
               />
             </svg>
           </Button>
-          <Button>Explore Now</Button>
+          <Button href="/dogs">Explore Now</Button>
         </div>
       </Banner>
       <Section
@@ -225,17 +226,17 @@ const Home: NextPage<HomeProps> = ({ dogs, products, news }) => {
 export default Home;
 
 Home.getInitialProps = async () => {
-  const dogs = await fetch('http://localhost:3000/api/dogs').then((res) =>
-    res.json()
-  );
+  const dogs = await fetch(
+    'https://6358307cc26aac906f3dda7a.mockapi.io/dogs'
+  ).then((res) => res.json());
 
-  const products = await fetch('http://localhost:3000/api/products').then(
-    (res) => res.json()
-  );
+  const products = await fetch(
+    'https://6358307cc26aac906f3dda7a.mockapi.io/products'
+  ).then((res) => res.json());
 
-  const news = await fetch('http://localhost:3000/api/news').then((res) =>
-    res.json()
-  );
+  const news = await fetch(
+    'https://6358307cc26aac906f3dda7a.mockapi.io/news'
+  ).then((res) => res.json());
 
   return { dogs: dogs, products: products, news: news };
 };

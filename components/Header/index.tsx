@@ -35,8 +35,8 @@ const Header: React.FC = () => {
                 </svg>
               </li>
               <li>
-                <Link href={'/'}>
-                  <a>Category</a>
+                <Link href={'/dogs'}>
+                  <a>Dogs</a>
                 </Link>
                 <svg
                   width="42"

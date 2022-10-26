@@ -19,10 +19,14 @@ interface DogsPageProps {
 }
 
 import filterCategoryStyle from '../../components/Filter/FilterCategory/FilterCategory.module.scss';
+import Head from 'next/head';
 
 const DogsPage: NextPage<DogsPageProps> = ({ dogs }) => {
   return (
     <main className={`${style.root}`}>
+      <Head>
+        <title>All our dogs 😊 | Monito</title>
+      </Head>
       <div className={`${style.container} container`}>
         <div className={`${style.path}`}>
           <Link href={'/'}>
@@ -70,7 +74,9 @@ const DogsPage: NextPage<DogsPageProps> = ({ dogs }) => {
                 />
               </svg>
             </Button>
-            <Button white>Explore Now</Button>
+            <Button href="/dogs" white>
+              Explore Now
+            </Button>
           </div>
         </Banner>
         <div className={`${style.body}`}>
@@ -127,8 +133,8 @@ const DogsPage: NextPage<DogsPageProps> = ({ dogs }) => {
 
 export default DogsPage;
 DogsPage.getInitialProps = async () => {
-  const dogs = await fetch('http://localhost:3000/api/dogs').then((res) =>
-    res.json()
-  );
+  const dogs = await fetch(
+    'https://6358307cc26aac906f3dda7a.mockapi.io/dogs'
+  ).then((res) => res.json());
   return { dogs: dogs };
 };

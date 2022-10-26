@@ -1,0 +1,45 @@
+.dropDown {
+  &Item {
+    display: flex;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccd1d2;
+    &:first-of-type {
+      padding-top: 0;
+    }
+    &:last-of-type {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+  &Link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    img {
+      width: 90px;
+      height: 90px;
+      border-radius: 10px;
+      margin-right: 15px;
+    }
+    h4 {
+      font-size: 16px;
+      color: #00171f;
+    }
+    p {
+      font-size: 14px;
+      color: #00171f;
+    }
+  }
+}
+.description {
+  display: inline-flex;
+  font-size: 12px;
+  gap: 1.6rem;
+  list-style: disc;
+  li {
+    &:first-of-type {
+      list-style: none;
+    }
+  }
+  margin-bottom: 5px;
+}

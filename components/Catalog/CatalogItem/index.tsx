@@ -26,7 +26,7 @@ const CatalogItem: React.FC<CatalogItemProps> = ({
 }) => {
   return (
     <Link href={`/${category}/` + SKU}>
-      <div className={`${style.catalogItem}`}>
+      <a className={`${style.catalogItem}`}>
         <img src={`/static/img/catalog/${category}/${image}`} alt={title} />
         <div className={`${style.body}`}>
           <h4>{title}</h4>
@@ -50,7 +50,7 @@ const CatalogItem: React.FC<CatalogItemProps> = ({
             </div>
           )}
         </div>
-      </div>
+      </a>
     </Link>
   );
 };

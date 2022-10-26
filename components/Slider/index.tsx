@@ -15,6 +15,15 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
   const onClickNextButton = () => {
     if (currentSlide < images.length - 1) setCurrentSlide((prev) => prev + 1);
   };
+
+  const imagesRowRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    imagesRowRef.current?.addEventListener('touchend', (event) => {
+      console.log(event);
+    });
+  }, []);
+
   return (
     <div className={`${style.slider}`}>
       <div className={`${style.rootImage}`}>
@@ -57,9 +66,10 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
         )}
       </div>
       {images.length > 1 && (
-        <div className={`${style.imagesRow}`}>
+        <div ref={imagesRowRef} className={`${style.imagesRow}`}>
           {images.map((image, idx) => (
             <div
+              key={idx}
               className={`${style.image} ${
                 currentSlide === idx ? style.imageActive : ''
               }`}

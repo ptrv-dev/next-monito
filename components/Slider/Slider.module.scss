@@ -54,6 +54,22 @@
   gap: 12px;
   margin-top: 12px;
   overflow: auto;
+  position: relative;
+  &::-webkit-scrollbar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #fdfdfd;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #99a2a5;
+    border-radius: 5px;
+  }
 }
 .image {
   width: 94px;
@@ -64,10 +80,10 @@
   border-radius: 6px;
   flex-shrink: 0;
   overflow: hidden;
-
   img {
     height: 100%;
     display: block;
+    pointer-events: none;
   }
   &Active {
     border: 3px solid #f1d092;
