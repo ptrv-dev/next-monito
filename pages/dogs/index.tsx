@@ -139,10 +139,3 @@ export const getStaticProps: GetStaticProps = async () => {
   ).then((res) => res.json());
   return { props: { dogs: dogs } };
 };
-
-DogsPage.getInitialProps = async () => {
-  const dogs = await fetch(
-    'https://6358307cc26aac906f3dda7a.mockapi.io/dogs'
-  ).then((res) => res.json());
-  return { dogs: dogs };
-};
