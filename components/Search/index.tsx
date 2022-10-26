@@ -14,6 +14,7 @@ interface SearchProps {
 const Search: React.FC<SearchProps> = ({ className, placeHolder }) => {
   const [query, setQuery] = React.useState<string>('');
   const [loading, setLoading] = React.useState<boolean>(true);
+  const [isVisible, setIsVisible] = React.useState(false);
   const [searchedItems, setSearchedItems] = React.useState<IDogItem[]>([]);
 
   const debounced = React.useCallback(
@@ -38,12 +39,37 @@ const Search: React.FC<SearchProps> = ({ className, placeHolder }) => {
     debounced(event.target.value);
   };
 
+  React.useEffect(() => {
+    const foo = (event: MouseEvent) => {
+      if (
+        searchRef.current &&
+        !event.composedPath().includes(searchRef.current)
+      ) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      console.log(event.composedPath());
+    };
+    window.addEventListener('click', foo);
+    return () => {
+      window.removeEventListener('click', foo);
+    };
+  }, []);
+
+  const onClickSearch = () => {
+    inputRef.current?.focus();
+    setIsVisible(true);
+  };
+
   const inputRef = React.useRef<HTMLInputElement>(null);
+  const searchRef = React.useRef<HTMLInputElement>(null);
 
   return (
     <>
       <div
-        onClick={() => inputRef.current?.focus()}
+        onClick={onClickSearch}
+        ref={searchRef}
         className={`${style.search}${className ? className : ''}`}
       >
         <svg
@@ -65,7 +91,8 @@ const Search: React.FC<SearchProps> = ({ className, placeHolder }) => {
           value={query}
           onChange={onChangeSearch}
         />
-        {query &&
+        {isVisible &&
+          query &&
           (loading ? (
             <span className={`${style.loading}`}>
               <svg
@@ -81,9 +108,9 @@ const Search: React.FC<SearchProps> = ({ className, placeHolder }) => {
                   cy="50"
                   fill="none"
                   stroke="#003459"
-                  stroke-width="10"
+                  strokeWidth="10"
                   r="35"
-                  stroke-dasharray="164.93361431346415 56.97787143782138"
+                  strokeDasharray="164.93361431346415 56.97787143782138"
                 >
                   <animateTransform
                     attributeName="transform"
