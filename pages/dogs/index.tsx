@@ -8,7 +8,6 @@ import style from '../../styles/DogsPage.module.scss';
 import bannerStyle from '../../components/Banner/Banner.module.scss';
 import Catalog from '../../components/Catalog';
 import Filter from '../../components/Filter';
-import { IDogItem } from '../api/dogs';
 import CatalogItem from '../../components/Catalog/CatalogItem';
 import FilterCategory from '../../components/Filter/FilterCategory';
 import Checkbox from '../../components/UI/Checkbox';
@@ -20,6 +19,7 @@ interface DogsPageProps {
 
 import filterCategoryStyle from '../../components/Filter/FilterCategory/FilterCategory.module.scss';
 import Head from 'next/head';
+import { IDogItem } from '../../components/Search';
 
 const DogsPage: NextPage<DogsPageProps> = ({ dogs }) => {
   return (

@@ -2,7 +2,6 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { IDogItem } from '../api/dogs';
 
 interface DogFullPageProps {
   dog: IDogItem;
@@ -12,6 +11,7 @@ import style from '../../styles/DogFullPage.module.scss';
 import Slider from '../../components/Slider';
 import Link from 'next/link';
 import Button from '../../components/UI/Button';
+import { IDogItem } from '../../components/Search';
 
 const DogFullPage: NextPage<DogFullPageProps> = ({ dog }) => {
   const title = `${dog.title} | Monito`;

@@ -1,11 +1,29 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { IDogItem } from '../../pages/api/dogs';
 import debounce from '../../utils/debounce';
 
 import style from './Search.module.scss';
 import SearchItem from './SearchItem';
+
+export interface IDogItem {
+  _id: number;
+  SKU: number;
+  images: string[];
+  age: string;
+  size: string;
+  color: string;
+  vaccinated: string;
+  dewormed: string;
+  cert: string;
+  microchip: string;
+  location: string;
+  published: string;
+  additionalInfo: string;
+  title: string;
+  price: number;
+  gene: string;
+}
 
 interface SearchProps {
   className?: string;

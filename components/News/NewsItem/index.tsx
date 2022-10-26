@@ -1,8 +1,15 @@
 import Link from 'next/link';
 import React from 'react';
-import { INewsItem } from '../../../pages/api/news';
 
 import style from './NewsItem.module.scss';
+
+export interface INewsItem {
+  _id: number;
+  image: string;
+  tags: string[];
+  title: string;
+  text: string;
+}
 
 const NewsItem: React.FC<INewsItem> = ({ _id, image, title, tags, text }) => {
   return (

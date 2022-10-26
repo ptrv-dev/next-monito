@@ -6,7 +6,17 @@ import CatalogItem from '../components/Catalog/CatalogItem';
 import Hero from '../components/IndexPage/Hero';
 import Section from '../components/Section';
 import Button from '../components/UI/Button';
-import { IDogItem } from './api/dogs';
+
+export interface IProductItem {
+  _id: number;
+  SKU: number;
+  image: string;
+  title: string;
+  product: string;
+  size: string;
+  price: number;
+  present: string;
+}
 
 interface HomeProps {
   dogs: IDogItem[];
@@ -15,11 +25,10 @@ interface HomeProps {
 }
 
 import bannerStyle from '../components/Banner/Banner.module.scss';
-import { IProductItem } from './api/products';
 import Sellers from '../components/Sellers';
 import News from '../components/News';
-import { INewsItem } from './api/news';
-import NewsItem from '../components/News/NewsItem';
+import NewsItem, { INewsItem } from '../components/News/NewsItem';
+import { IDogItem } from '../components/Search';
 
 const Home: NextPage<HomeProps> = ({ dogs, products, news }) => {
   return (
