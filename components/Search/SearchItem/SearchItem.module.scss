@@ -28,6 +28,7 @@
     p {
       font-size: 14px;
       color: #00171f;
+      font-weight: 500;
     }
   }
 }
@@ -36,6 +37,7 @@
   font-size: 12px;
   gap: 1.6rem;
   list-style: disc;
+  color: #000;
   li {
     &:first-of-type {
       list-style: none;
