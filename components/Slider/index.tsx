@@ -18,12 +18,6 @@ const Slider: React.FC<SliderProps> = ({ images }) => {
 
   const imagesRowRef = React.useRef<HTMLDivElement>(null);
 
-  React.useEffect(() => {
-    imagesRowRef.current?.addEventListener('touchend', (event) => {
-      console.log(event);
-    });
-  }, []);
-
   return (
     <div className={`${style.slider}`}>
       <div className={`${style.rootImage}`}>
