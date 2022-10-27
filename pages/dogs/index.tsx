@@ -20,8 +20,16 @@ interface DogsPageProps {
 import filterCategoryStyle from '../../components/Filter/FilterCategory/FilterCategory.module.scss';
 import Head from 'next/head';
 import { IDogItem } from '../../components/Search';
+import { useRouter } from 'next/router';
 
 const DogsPage: NextPage<DogsPageProps> = ({ dogs }) => {
+  const { query } = useRouter();
+  if (query.search) {
+    dogs = dogs.filter((dog) =>
+      // @ts-ignore-next-line
+      dog.title.toLowerCase().includes(query.search.toLowerCase())
+    );
+  }
   return (
     <main>
       <Head>
@@ -107,7 +115,11 @@ const DogsPage: NextPage<DogsPageProps> = ({ dogs }) => {
             </FilterCategory>
           </Filter>
           <div className={`${style.catalog}`}>
-            <h3>All our dogs 😊</h3>
+            <h3>
+              {query.search
+                ? `All our dogs on request: \'${query.search}\' 😊`
+                : 'All our dogs 😊'}
+            </h3>
             <Catalog columnsCount={3}>
               {dogs.map((dog) => (
                 <CatalogItem

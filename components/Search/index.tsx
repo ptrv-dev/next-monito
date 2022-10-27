@@ -151,7 +151,7 @@ const Search: React.FC<SearchProps> = ({ className, placeHolder }) => {
             <div className={`${style.dropDown}`}>
               <ul className={`${style.dropDownList}`}>
                 {searchedItems.length > 0 ? (
-                  searchedItems.map((item) => (
+                  searchedItems.slice(0, 4).map((item) => (
                     <SearchItem
                       key={item._id}
                       SKU={item.SKU}
@@ -170,6 +170,11 @@ const Search: React.FC<SearchProps> = ({ className, placeHolder }) => {
                   </p>
                 )}
               </ul>
+              {searchedItems.length > 4 && (
+                <Link href={'/dogs?search=' + query}>
+                  <a className={`${style.seeAll}`}>See all...</a>
+                </Link>
+              )}
             </div>
           ))}
       </div>
