@@ -42,7 +42,12 @@ const CatalogItem: React.FC<CatalogItemProps> = ({
               )}
             </ul>
           )}
-          <p className={`${style.price}`}>{price} VND</p>
+          <p className={`${style.price}`}>
+            {price.toLocaleString('ua-UA', {
+              style: 'currency',
+              currency: 'EUR',
+            })}
+          </p>
           {present && (
             <div className={`${style.present}`}>
               <img src="/static/img/icons/present.svg" alt="" />

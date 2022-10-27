@@ -69,7 +69,12 @@ const DogFullPage: NextPage<DogFullPageProps> = ({ dog }) => {
               </div>
               <p className={`${style.suptitle}`}>SKU #{dog.SKU}</p>
               <h3 className={`${style.title}`}>{dog.title}</h3>
-              <p className={`${style.price}`}>{dog.price} VND</p>
+              <p className={`${style.price}`}>
+                {dog.price.toLocaleString('ua-UA', {
+                  style: 'currency',
+                  currency: 'EUR',
+                })}
+              </p>
               <div className={`${style.buttonsRow}`}>
                 <Button>Contact Us</Button>
                 <Button border>

@@ -235,15 +235,15 @@ export default Home;
 
 export async function getStaticProps() {
   const dogs = await fetch(
-    'https://6358307cc26aac906f3dda7a.mockapi.io/dogs'
+    'https://6358307cc26aac906f3dda7a.mockapi.io/dogs?page=1&limit=8'
   ).then((res) => res.json());
 
   const products = await fetch(
-    'https://6358307cc26aac906f3dda7a.mockapi.io/products'
+    'https://6358307cc26aac906f3dda7a.mockapi.io/products?page=1&limit=8'
   ).then((res) => res.json());
 
   const news = await fetch(
-    'https://6358307cc26aac906f3dda7a.mockapi.io/news'
+    'https://6358307cc26aac906f3dda7a.mockapi.io/news?page=1&limit=3'
   ).then((res) => res.json());
 
   return { props: { dogs: dogs, products: products, news: news } };
